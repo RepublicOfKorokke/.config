@@ -1,0 +1,36 @@
+# main view の左端にコミットIDを表示する
+set main-view = id date author:email-user commit-title:graph=yes,refs=yes
+
+# blame view の行数表示をON、intervalを1に
+set blame-view  = date:default author:email-user id:yes,color line-number:yes,interval=1 text
+
+# Pager系の行数表示をON、intervalを1に (default: line-number:no,interval=5)
+set pager-view  = line-number:yes,interval=1 text
+set stage-view  = line-number:yes,interval=1 text
+set log-view    = line-number:yes,interval=1 text
+set blob-view   = line-number:yes,interval=1 text
+set diff-view   = line-number:yes,interval=1 text:yes,commit-title-overflow=no
+
+set diff-highlight = true
+color  diff-header       default magenta
+color  diff-chunk        black   white
+
+set ignore-case = true
+
+# bind a to git ammend on status view
+bind status a !?git commit --amend
+
+# H で reset --hard
+bind main    H      ?git reset --hard %(commit)
+bind main    S      ?git reset --soft %(commit)
+bind diff    H      ?git reset --hard %(commit)
+bind refs    H      ?git reset --hard %(branch)
+
+# H で reset --hard HEAD (status-view)
+bind status  H      ?git reset --hard HEAD
+
+# K で cherry-pick (default: 'C')
+bind main    C      ?git cherry-pick -x %(commit)
+bind diff    C      ?git cherry-pick -x %(commit)
+
+bind main    c      ?git checkout %(commit)

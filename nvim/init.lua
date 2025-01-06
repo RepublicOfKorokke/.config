@@ -1,0 +1,5 @@
+require("base")
+require("options")
+require("auto_commands")
+require("keymaps")
+require("lazyplugs")

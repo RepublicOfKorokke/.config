@@ -1,0 +1,2 @@
+tmux split-window -v -l 35% -t 1
+tmux split-window -h -l 50% -t 2
