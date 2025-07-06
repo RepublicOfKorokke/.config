@@ -1,23 +1,23 @@
 set -g fish_greeting
 
-# set -Ux PYENV_ROOT $HOME/.pyenv
-fish_add_path $PYENV_ROOT/bin
-pyenv init - | source
-
 # set aliases
+abbr -a ai " ollama run (ollama list | tail -n +2 | fzf --prompt='Select a model: ' | awk '{print \$1}')"
 abbr -a b " bat"
-abbr -a l " lazygit"
-abbr -a n " nvim"
-abbr -a p " python"
-abbr -a z " z"
+abbr -a bn " bat --paging=never"
+abbr -a bd " bd"
 abbr -a c " cdh"
-abbr -a d " dirh"
 abbr -a cd " cd"
 abbr -a cdd " cd ../"
+abbr -a d " dirh"
 abbr -a fdu " du -hs (find . -maxdepth 1 -type d | fzf)"
+abbr -a l " lazygit"
 abbr -a ll " gls --color --group-directories-first -AlhFX"
 abbr -a ls " gls --color"
-abbr -a ai " ollama run (ollama list | tail -n +2 | fzf --prompt='Select a model: ' | awk '{print \$1}')"
+abbr -a mermaid " fd -e md | fzf | xargs -I {} podman run --userns keep-id --user (id -u) --rm -v "$PWD":/data:z ghcr.io/mermaid-js/mermaid-cli/mermaid-cli -s 8 -i {} -o output.png"
+abbr -a n " nvim"
+abbr -a p " python"
+abbr -a tf " tail -f"
+abbr -a z " z"
 
 # set enviroment variables
 set -Ux LS_COLORS "$(vivid generate molokai)"
