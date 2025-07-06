@@ -43,6 +43,7 @@ keymap("t", "<C-g>", "<C-\\><C-n>", map)
 
 -- save
 keymap("n", "<C-s>", ":update<Return>", noremap)
+keymap("n", "<Leader><C-s>", ":noa update<Return>", noremap)
 
 -- quit
 keymap("n", "<C-q><c-q>", ":<C-u>qa<Return>", noremap)
