@@ -18,7 +18,7 @@ vim.g.maplocalleader = " "
 --   n / v / s / o = '',
 
 ----- unbind some unused keymap -----
-keymap("", "q", "<Nop>", noremap)     -- unbind default macro key
+keymap("", "q", "<Nop>", noremap) -- unbind default macro key
 keymap("", "<Leader>q", "q", noremap) -- bind macro key
 keymap("", "<C-b>", "<Nop>", noremap) -- unbind scroll page up
 
@@ -39,6 +39,7 @@ keymap("", "<F12>", ":cd %:h", noremap)
 ----- basic keys -----
 keymap("n", "<C-P>", ":", map)
 keymap("i", "<C-g>", "<Esc>", map)
+keymap("t", "<C-g>", "<C-\\><C-n>", map)
 
 -- save
 keymap("n", "<C-s>", ":update<Return>", noremap)
@@ -63,7 +64,7 @@ keymap("", "<C-h>", "^", noremap)
 keymap("", "<C-l>", "$", noremap)
 
 -- serach
-keymap("n", "<C-f>", ":Rg ", noremap)
+keymap("n", "<C-f>", "/", noremap)
 keymap("x", "<C-f>", 'y/\\V<C-R>"<CR>', noremap)
 
 -- replace searched word
@@ -104,8 +105,8 @@ keymap("c", "<C-e>", "<End>", noremap)
 
 ----- window / tabs -----
 -- split window
-keymap("n", "<C-w>x", ":split<Return><C-w>j", noremap)
-keymap("n", "<C-w>v", ":vsplit<Return><C-w>l", noremap)
+keymap("n", "<C-w>x", ":new<Return><C-w>j", noremap)
+keymap("n", "<C-w>v", ":vnew<Return><C-w>l", noremap)
 
 -- close buffer
 keymap("n", "<C-w>w", ":bd<Return>", noremap)

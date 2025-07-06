@@ -3,7 +3,7 @@ local options = {
 	fileencoding = "utf-8",
 	title = true,
 	shell = "fish", -- which shell to use when execute Ex command
-	mouse = "", -- disable mouse operation
+	-- mouse = "", -- disable mouse operation
 	timeoutlen = 500, -- wait time for keys: ESC, combination, etc.
 	updatetime = 300, -- wait input for this ms. after no key input, write to swap
 	undofile = true, -- save operation to file for undo after close file
@@ -43,7 +43,7 @@ local options = {
 	spelllang = { "en_us" },
 	foldmethod = "indent", -- options) manual indent expr  syntax diff  marker
 	foldcolumn = "4", -- how many columns to show folding indicator on left
-	foldlevelstart = 1, -- 0 for close all, 99 for open all on start
+	foldlevelstart = 99, -- 0 for close all, 99 for open all on start
 }
 
 vim.opt.shortmess:append("c") -- do not show ins-completation-menu message
