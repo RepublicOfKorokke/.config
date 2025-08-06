@@ -39,7 +39,7 @@ keymap("", "<F12>", ":cd %:h", noremap)
 ----- basic keys -----
 keymap("n", "<C-P>", ":", map)
 keymap("i", "<C-g>", "<Esc>", map)
-keymap("t", "<C-g>", "<C-\\><C-n>", map)
+keymap("t", "<C-g><C-g>", "<C-\\><C-n>", map)
 
 -- save
 keymap("n", "<C-s>", ":update<Return>", noremap)
@@ -106,7 +106,7 @@ keymap("c", "<C-e>", "<End>", noremap)
 
 ----- window / tabs -----
 -- split window
-keymap("n", "<C-w>x", ":new<Return><C-w>j", noremap)
+keymap("n", "<C-w>s", ":new<Return><C-w>j", noremap)
 keymap("n", "<C-w>v", ":vnew<Return><C-w>l", noremap)
 
 -- close buffer

@@ -58,16 +58,36 @@ autocmd("LspAttach", {
 		vim.keymap.set("n", "<leader>ll", function()
 			vim.notify("LSP server: " .. server_name .. "\nAttached to: " .. vim.fn.expand("%"))
 		end)
-		vim.keymap.set("n", "<leader>lf", function()
+		vim.keymap.set("n", "<leader>llf", function()
 			vim.lsp.buf.format({ async = true })
+			vim.notify("Format by LSP: " .. server_name)
 		end)
-		-- LSP handlers
-		vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-			virtual_text = {
-				format = function(diagnostic)
-					return string.format("%s (%s: %s)", diagnostic.message, diagnostic.source, diagnostic.code)
-				end,
-			},
-		})
+		-- show diagnostic on hover
+		local group = vim.api.nvim_create_augroup("OoO", {})
+
+		local function au(typ, pattern, cmdOrFn)
+			if type(cmdOrFn) == "function" then
+				vim.api.nvim_create_autocmd(typ, { pattern = pattern, callback = cmdOrFn, group = group })
+			else
+				vim.api.nvim_create_autocmd(typ, { pattern = pattern, command = cmdOrFn, group = group })
+			end
+		end
+
+		au({ "CursorHold", "InsertLeave" }, nil, function()
+			local opts = {
+				focusable = false,
+				scope = "cursor",
+				close_events = { "BufLeave", "CursorMoved", "InsertEnter" },
+			}
+			vim.diagnostic.open_float(nil, opts)
+		end)
+
+		au("InsertEnter", nil, function()
+			vim.diagnostic.enable(false)
+		end)
+
+		au("InsertLeave", nil, function()
+			vim.diagnostic.enable(true)
+		end)
 	end,
 })

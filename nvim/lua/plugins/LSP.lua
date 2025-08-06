@@ -2,19 +2,21 @@ return {
 	"williamboman/mason-lspconfig.nvim",
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
-		{ "williamboman/mason.nvim" },
+		{ "williamboman/mason.nvim", opts = {} },
 		{ "neovim/nvim-lspconfig" },
 		{ "Jint-lzxy/lsp_signature.nvim", opts = {} },
-		{ "j-hui/fidget.nvim" },
-		{ "hrsh7th/cmp-nvim-lsp" },
+		{ "j-hui/fidget.nvim", opts = {} },
 	},
-	config = function()
-		local lspconfig = require("lspconfig")
-
-		require("mason").setup()
-		require("mason-lspconfig").setup({
-			ensure_installed = { "lua_ls", "rust_analyzer", "pyright" },
-		})
-		require("fidget").setup({})
-	end,
+	opts = {
+		ensure_installed = {
+			"bashls",
+			"cssls",
+			"lua_ls",
+			"pyright",
+			"ruff",
+			"rust_analyzer",
+			"ts_ls",
+			"yamlls",
+		},
+	},
 }
