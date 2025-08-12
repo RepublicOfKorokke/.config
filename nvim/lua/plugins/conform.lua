@@ -32,8 +32,11 @@ return {
 
 	opts = {
 		formatters_by_ft = {
+			css = { "prettier" },
 			javascript = { "prettier" },
+			json = { "prettier" },
 			lua = { "stylua" },
+			markdown = { "prettier" },
 			python = {
 				-- To fix auto-fixable lint errors.
 				"ruff_fix",
@@ -43,7 +46,9 @@ return {
 				"ruff_organize_imports",
 			},
 			rust = { "rustfmt" },
+			sh = { "shfmt" },
 			toml = { "taplo" },
+			typescript = { "prettier" },
 		},
 
 		default_format_opts = {

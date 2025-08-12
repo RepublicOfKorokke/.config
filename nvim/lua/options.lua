@@ -44,6 +44,7 @@ local options = {
 	foldmethod = "indent", -- options) manual indent expr  syntax diff  marker
 	foldcolumn = "4", -- how many columns to show folding indicator on left
 	foldlevelstart = 99, -- 0 for close all, 99 for open all on start
+	diffopt = "horizontal",
 }
 
 vim.opt.shortmess:append("c") -- do not show ins-completation-menu message
