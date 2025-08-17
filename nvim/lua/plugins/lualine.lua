@@ -1,3 +1,19 @@
+local function getWords()
+	if vim.fn.mode() == "v" or vim.fn.mode() == "V" or vim.fn.mode() == "" then
+		return vim.fn.wordcount().visual_words .. " words"
+	else
+		return vim.fn.wordcount().words .. " words"
+	end
+end
+
+local function getChars()
+	if vim.fn.mode() == "v" or vim.fn.mode() == "V" then
+		return vim.fn.wordcount().visual_chars .. " chars"
+	else
+		return vim.fn.wordcount().chars .. " chars"
+	end
+end
+
 return {
 	"nvim-lualine/lualine.nvim",
 	event = { "BufReadPre", "BufNewFile" },
@@ -21,35 +37,35 @@ return {
 		},
 		tabline = { -- tab view
 			lualine_a = { "tabs" },
-			lualine_b = { "branch" },
-			lualine_c = { "filename" },
-			lualine_x = {},
-			lualine_y = {},
-			lualine_z = {},
+			lualine_b = {},
+			lualine_c = {},
+			lualine_x = { "diff", "diagnostics" },
+			lualine_y = { "branch" },
+			lualine_z = { "lsp_status" },
 		},
 		winbar = { -- top view
 			lualine_a = { { "filename", path = 1 } },
 			lualine_b = {},
 			lualine_c = {},
-			lualine_x = { "encoding", "fileformat", "filetype" },
-			lualine_y = { "progress" },
-			lualine_z = { "location" },
+			lualine_x = {},
+			lualine_y = {},
+			lualine_z = {},
 		},
 		inactive_winbar = {
 			lualine_a = { { "filename", path = 1 } },
 			lualine_b = {},
 			lualine_c = {},
-			lualine_x = { "encoding", "filetype", "fileformat" },
-			lualine_y = { "progress" },
-			lualine_z = { "location" },
+			lualine_x = {},
+			lualine_y = {},
+			lualine_z = {},
 		},
 		sections = { -- bottom view
 			lualine_a = { "mode" },
-			lualine_b = { "searchcount" },
-			lualine_c = { "selectioncount" },
-			lualine_x = {},
-			lualine_y = {},
-			lualine_z = { "lsp_status" },
+			lualine_b = {},
+			lualine_c = {},
+			lualine_x = { "encoding", "fileformat", "filetype", "filesize" },
+			lualine_y = { getWords, getChars },
+			lualine_z = { "location", "progress" },
 		},
 		inactive_sections = {
 			lualine_a = {},

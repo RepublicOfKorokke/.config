@@ -1,3 +1,5 @@
+vim.cmd("autocmd!") -- remove all autocmd
+
 local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
 
 -- Remove whitespace on save
@@ -15,27 +17,36 @@ autocmd({ "BufReadPost" }, {
 })
 
 -- Set indent width
-autocmd("BufEnter", {
-	setlocal,
-	pattern = "*.rs",
-	command = "set shiftwidth=4",
-})
-
-autocmd("BufEnter", {
-	setlocal,
-	pattern = { "*.ts", "*.tsx" },
-	command = "set shiftwidth=2",
-})
-
-autocmd("BufEnter", {
-	setlocal,
-	pattern = { "*.json" },
-	command = "set shiftwidth=2",
-})
+-- autocmd("BufEnter", {
+-- 	setlocal,
+-- 	pattern = "*.rs",
+-- 	command = "set shiftwidth=4",
+-- })
+--
+-- autocmd("BufEnter", {
+-- 	setlocal,
+-- 	pattern = { "*.ts", "*.tsx" },
+-- 	command = "set shiftwidth=2",
+-- })
+--
+-- autocmd("BufEnter", {
+-- 	setlocal,
+-- 	pattern = { "*.json" },
+-- 	command = "set shiftwidth=2",
+-- })
 
 autocmd("TermOpen", {
 	pattern = "*",
 	command = "startinsert",
+})
+
+autocmd("TabEnter", {
+	pattern = "*",
+	callback = function()
+		if vim.bo.buftype == "terminal" then
+			vim.cmd("startinsert")
+		end
+	end,
 })
 
 autocmd("LspAttach", {

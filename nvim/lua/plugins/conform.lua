@@ -33,6 +33,7 @@ return {
 	opts = {
 		formatters_by_ft = {
 			css = { "prettier" },
+			html = { "prettier" },
 			javascript = { "prettier" },
 			json = { "prettier" },
 			lua = { "stylua" },
