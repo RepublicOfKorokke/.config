@@ -18,7 +18,7 @@ vim.g.maplocalleader = " "
 --   n / v / s / o = '',
 
 ----- unbind some unused keymap -----
-keymap("", "q", "<Nop>", noremap) -- unbind default macro key
+-- keymap("", "q", "<Nop>", noremap) -- unbind default macro key
 keymap("", "<Leader>q", "q", noremap) -- bind macro key
 keymap("", "<C-b>", "<Nop>", noremap) -- unbind scroll page up
 
