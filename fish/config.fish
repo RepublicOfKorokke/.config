@@ -1,4 +1,8 @@
-set -g fish_greeting
+function fish_greeting
+    echo TTY: (set_color yellow)(tty)(set_color normal)
+end
+
+zoxide init fish | source
 
 # set aliases
 abbr -a ai " ollama run (ollama list | tail -n +2 | fzf --prompt='Select a model: ' | awk '{print \$1}')"
@@ -15,9 +19,11 @@ abbr -a ll " gls --color --group-directories-first -AlhFX"
 abbr -a ls " gls --color"
 abbr -a mermaid " fd -e md | fzf | xargs -I {} podman run --userns keep-id --user (id -u) --rm -v "$PWD":/data:z ghcr.io/mermaid-js/mermaid-cli/mermaid-cli -s 8 -i {} -o output.png"
 abbr -a n " nvim"
+abbr -a nn " nvim -c ':tabnew term://fish | stopinsert | tabmove 0 | tabnext'"
 abbr -a p " python"
 abbr -a tf " tail -f"
 abbr -a z " z"
+abbr -a zi " zi"
 
 # set enviroment variables
 set -Ux LS_COLORS "$(vivid generate molokai)"
