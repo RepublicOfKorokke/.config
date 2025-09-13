@@ -36,7 +36,6 @@ return {
 				return "<Ignore>"
 			end, { expr = true })
 
-			map("n", "<leader>gp", gs.preview_hunk)
 			map("n", "<leader>gb", function()
 				gs.blame_line({ full = true })
 			end)

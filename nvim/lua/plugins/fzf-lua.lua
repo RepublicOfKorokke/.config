@@ -12,7 +12,7 @@ return {
 		vim.api.nvim_set_keymap("n", "<Leader>ff", ":FzfLua builtin<Return>", { noremap = true })
 		vim.api.nvim_set_keymap("n", "<Leader>fd", ":FzfLua diagnostics_document<Return>", { noremap = true })
 		vim.api.nvim_set_keymap("n", "<Leader>fg", ":FzfLua live_grep<Return>", { noremap = true })
-		vim.api.nvim_set_keymap("n", "<Leader>fG", ":FzfLua grep_cWORD<Return>", { noremap = true })
+		vim.api.nvim_set_keymap("n", "<Leader>fG", ":FzfLua grep_cword<Return>", { noremap = true })
 		vim.api.nvim_set_keymap("n", "<Leader>fl", ":FzfLua blines<Return>", { noremap = true })
 		vim.api.nvim_set_keymap("n", "<Leader>fn", ":FzfLua files<Return>", { noremap = true })
 		vim.api.nvim_set_keymap("n", "<Leader>fN", ":FzfLua oldfiles<Return>", { noremap = true })

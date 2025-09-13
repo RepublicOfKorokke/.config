@@ -28,13 +28,14 @@ abbr -a zi " zi"
 # set enviroment variables
 set -Ux LS_COLORS "$(vivid generate molokai)"
 set -Ux FZF_LEGACY_KEYBINDINGS 0
-# set -Ux FZF_DEFAULT_OPTS "--bind 'backward-eof:abort,ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all' --reverse --height=75%"
-# set -Ux FZF_DEFAULT_COMMAND 'rg -uu --files --hidden --glob "!.git"'
+set -Ux FZF_DEFAULT_OPTS "--bind 'backward-eof:abort,ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all' --reverse --height=75%"
+set -Ux FZF_DEFAULT_COMMAND 'rg -uu --files --hidden --glob "!.git"'
 
 # bind shortcut keys
-bind \cq 'fzf_change_env'
+# bind \cq 'fzf_change_env'
 bind \cr 'fzf_command_history'
 bind \ct 'fzf_preview_dir'
+bind \cy 'fcd'
 
 # auto load tmux session
 function attach_tmux_session_if_needed
