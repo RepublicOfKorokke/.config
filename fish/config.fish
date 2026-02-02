@@ -18,6 +18,7 @@ abbr -a l " lazygit"
 abbr -a ll " gls --color --group-directories-first -AlhFX"
 abbr -a ls " gls --color"
 abbr -a mermaid " fd -e md | fzf | xargs -I {} podman run --userns keep-id --user (id -u) --rm -v "$PWD":/data:z ghcr.io/mermaid-js/mermaid-cli/mermaid-cli -s 8 -i {} -o output.png"
+abbr -a marp " fd -e md | fzf | xargs -I {}  podman run --rm --init --mount type=bind,source=(pwd),target=/home/marp/app/ docker.io/marpteam/marp-cli {} --pdf"
 abbr -a n " nvim"
 abbr -a nn " nvim -c ':tabnew term://fish | stopinsert | tabmove 0 | tabnext'"
 abbr -a p " python"
@@ -26,10 +27,10 @@ abbr -a z " z"
 abbr -a zi " zi"
 
 # set enviroment variables
-set -Ux LS_COLORS "$(vivid generate molokai)"
-set -Ux FZF_LEGACY_KEYBINDINGS 0
-set -Ux FZF_DEFAULT_OPTS "--bind 'backward-eof:abort,ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all' --reverse --height=75%"
-set -Ux FZF_DEFAULT_COMMAND 'rg -uu --files --hidden --glob "!.git"'
+set -x LS_COLORS "$(vivid generate molokai)"
+set -x FZF_LEGACY_KEYBINDINGS 0
+set -x FZF_DEFAULT_OPTS "--bind 'backward-eof:abort,ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all' --reverse --height=75%"
+set -x FZF_DEFAULT_COMMAND 'rg -uu --files --hidden --glob "!.git"'
 
 # bind shortcut keys
 # bind \cq 'fzf_change_env'
