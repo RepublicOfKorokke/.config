@@ -4,7 +4,10 @@ return {
 	config = function()
 		require("notify").setup({
 			background_colour = "#000000",
-			timeout = 2000,
+			timeout = 1500,
+			fps = 120,
+			stages = "slide",
+			top_down = false,
 		})
 		vim.notify = require("notify")
 		-- vim.api.nvim_create_autocmd({ "BufRead" }, {

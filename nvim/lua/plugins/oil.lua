@@ -13,8 +13,8 @@ return {
 			["<C-r>"] = "actions.refresh",
 			["-"] = "actions.parent",
 			["_"] = "actions.open_cwd",
-			["`"] = "actions.cd",
-			["~"] = "actions.tcd",
+			[","] = "actions.cd",
+			["."] = "actions.tcd",
 			["g."] = "actions.toggle_hidden",
 		},
 		columns = {
