@@ -2,8 +2,8 @@ return {
 	"https://codeberg.org/andyg/leap.nvim",
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
-		vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap)")
-		vim.keymap.set("n", "S", "<Plug>(leap-anywhere)")
+		vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap)", { desc = "Leap to next char" })
+		vim.keymap.set("n", "S", "<Plug>(leap-anywhere)", { desc = "Leap to next char anywhere" })
 		vim.api.nvim_set_hl(0, "LeapBackdrop", { link = "Comment" })
 		require("leap.user").set_repeat_keys("<TAB>", "<S-Tab>")
 		do
@@ -27,10 +27,10 @@ return {
 			local clever_t = clever("t", "T")
 
 			for key, key_specific_args in pairs({
-				f = { opts = clever_f },
-				F = { backward = true, opts = clever_f },
-				t = { offset = -1, opts = clever_t },
-				T = { backward = true, offset = 1, opts = clever_t },
+				f = { opts = clever_f, desc = "Leap to next char" },
+				F = { backward = true, opts = clever_f, desc = "Leap to prev char" },
+				t = { offset = -1, opts = clever_t, desc = "Leap to before next char" },
+				T = { backward = true, offset = 1, opts = clever_t, desc = "Leap to after prev char" },
 			}) do
 				vim.keymap.set({ "n", "x", "o" }, key, function()
 					require("leap").leap(as_ft(key_specific_args))

@@ -1,7 +1,7 @@
 return {
 	"stevearc/oil.nvim",
 	keys = {
-		{ "<C-n><C-n>", ":Oil<cr>", mode = "n" },
+		{ "<C-n><C-n>", ":Oil<cr>", mode = "n", desc = "Open Oil" },
 	},
 	opts = {
 		keymaps = {

@@ -24,7 +24,7 @@ return {
 					gs.prev_hunk()
 				end)
 				return "<Ignore>"
-			end, { expr = true })
+			end, { expr = true, desc = "Previous Hunk" })
 
 			map("n", "]g", function()
 				if vim.wo.diff then
@@ -34,12 +34,12 @@ return {
 					gs.next_hunk()
 				end)
 				return "<Ignore>"
-			end, { expr = true })
+			end, { expr = true, desc = "Next Hunk" })
 
 			map("n", "<leader>gb", function()
 				gs.blame_line({ full = true })
-			end)
-			map("n", "<leader>gd", gs.toggle_deleted)
+			end, { desc = "Blame Line" })
+			map("n", "<leader>gd", gs.toggle_deleted, { desc = "Toggle Deleted" })
 		end,
 	},
 }

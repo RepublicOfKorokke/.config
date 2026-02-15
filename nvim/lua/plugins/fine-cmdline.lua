@@ -14,20 +14,25 @@ return {
 						"i",
 						"<C-k>",
 						fn.up_search_history,
-						{ buffer = input.bufnr, noremap = true, silent = true }
+						{ buffer = input.bufnr, noremap = true, silent = true, desc = "Up Search History" }
 					)
 					vim.keymap.set(
 						"i",
 						"<C-j>",
 						fn.down_search_history,
-						{ buffer = input.bufnr, noremap = true, silent = true }
+						{ buffer = input.bufnr, noremap = true, silent = true, desc = "Down Search History" }
 					)
-					vim.keymap.set("i", "<C-p>", fn.up_history, { buffer = input.bufnr, noremap = true, silent = true })
+					vim.keymap.set(
+						"i",
+						"<C-p>",
+						fn.up_history,
+						{ buffer = input.bufnr, noremap = true, silent = true, desc = "Up History" }
+					)
 					vim.keymap.set(
 						"i",
 						"<C-n>",
 						fn.down_history,
-						{ buffer = input.bufnr, noremap = true, silent = true }
+						{ buffer = input.bufnr, noremap = true, silent = true, desc = "Down History" }
 					)
 				end,
 			},
@@ -53,13 +58,13 @@ return {
 			"n",
 			"<leader><C-r>",
 			"<cmd>lua open_fine_replace()<CR>",
-			{ noremap = true, silent = true }
+			{ noremap = true, silent = true, desc = "Fine Replace" }
 		)
 		vim.api.nvim_set_keymap(
 			"n",
 			"<C-p>",
 			':lua require("fine-cmdline").open()<CR>',
-			{ noremap = true, silent = true }
+			{ noremap = true, silent = true, desc = "Open Commandline" }
 		)
 	end,
 }
