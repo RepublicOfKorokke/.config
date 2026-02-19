@@ -1,6 +1,6 @@
 return {
 	"vim-skk/skkeleton",
-	event = { "BufReadPre", "BufNewFile" },
+	event = "VeryLazy",
 	dependencies = {
 		{ "vim-denops/denops.vim" },
 		{ "delphinus/skkeleton_indicator.nvim", opts = {} },

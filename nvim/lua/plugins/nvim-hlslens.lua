@@ -1,7 +1,8 @@
 return {
 	"kevinhwang91/nvim-hlslens",
 	keys = {
-		{ "*", "#", "g*", "g#", "/" },
+		{ "*", [[*<Cmd>lua require('hlslens').start()<CR>]], mode = "n", desc = "jump to word with hlslens" },
+		{ "#", [[#<Cmd>lua require('hlslens').start()<CR>]], mode = "n", desc = "jump to previous word with hlslens" },
 	},
 	config = function()
 		require("hlslens").setup()
@@ -16,30 +17,6 @@ return {
 			"N",
 			[[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
 			{ noremap = true, desc = "Previous Search" }
-		)
-		vim.api.nvim_set_keymap(
-			"n",
-			"*",
-			[[*<Cmd>lua require('hlslens').start()<CR>]],
-			{ noremap = true, desc = "Search Word Forward" }
-		)
-		vim.api.nvim_set_keymap(
-			"n",
-			"#",
-			[[#<Cmd>lua require('hlslens').start()<CR>]],
-			{ noremap = true, desc = "Search Word Backward" }
-		)
-		vim.api.nvim_set_keymap(
-			"n",
-			"g*",
-			[[g*<Cmd>lua require('hlslens').start()<CR>]],
-			{ noremap = true, desc = "Search Word Forward" }
-		)
-		vim.api.nvim_set_keymap(
-			"n",
-			"g#",
-			[[g#<Cmd>lua require('hlslens').start()<CR>]],
-			{ noremap = true, desc = "Search Word Backward" }
 		)
 	end,
 }

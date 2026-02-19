@@ -3,6 +3,7 @@ return {
 	keys = {
 		{ "<C-n><C-n>", ":Oil<cr>", mode = "n", desc = "Open Oil" },
 	},
+	cmd = "Oil",
 	opts = {
 		keymaps = {
 			["g?"] = "actions.show_help",

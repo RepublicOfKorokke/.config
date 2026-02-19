@@ -1,6 +1,8 @@
 return {
 	"williamboman/mason-lspconfig.nvim",
 	event = { "BufReadPre", "BufNewFile" },
+	keys = { "BufReadPre", "BufNewFile" },
+	cmd = "Mason",
 	dependencies = {
 		{ "williamboman/mason.nvim", opts = {} },
 		{ "neovim/nvim-lspconfig" },
@@ -12,7 +14,7 @@ return {
 			"bashls",
 			"cssls",
 			"lua_ls",
-			"pyright",
+			"ty",
 			"ruff",
 			"rust_analyzer",
 			"ts_ls",

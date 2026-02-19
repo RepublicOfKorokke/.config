@@ -1,9 +1,11 @@
 return {
 	"https://codeberg.org/andyg/leap.nvim",
 	event = { "BufReadPre", "BufNewFile" },
+	keys = {
+		{ "s", "<Plug>(leap)", mode = { "n", "x", "o" }, desc = "Leap to next char" },
+		{ "S", "<Plug>(leap-anywhere)", mode = "n", desc = "Leap to next char anywhere" },
+	},
 	config = function()
-		vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap)", { desc = "Leap to next char" })
-		vim.keymap.set("n", "S", "<Plug>(leap-anywhere)", { desc = "Leap to next char anywhere" })
 		vim.api.nvim_set_hl(0, "LeapBackdrop", { link = "Comment" })
 		require("leap.user").set_repeat_keys("<TAB>", "<S-Tab>")
 		do
