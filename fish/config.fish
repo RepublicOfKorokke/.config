@@ -5,7 +5,6 @@ end
 zoxide init fish | source
 
 # set aliases
-abbr -a ai " ollama run (ollama list | tail -n +2 | fzf --prompt='Select a model: ' | awk '{print \$1}')"
 abbr -a b " bat"
 abbr -a bn " bat --paging=never"
 abbr -a bd " bd"
@@ -14,6 +13,8 @@ abbr -a cd " cd"
 abbr -a cdd " cd ../"
 abbr -a d " dirh"
 abbr -a fdu " du -hs (find . -maxdepth 1 -type d | fzf)"
+abbr -a fkill " ps | fzf | awk '{print \$1}' | xargs kill -9"
+abbr -a glow " glow"
 abbr -a l " lazygit"
 abbr -a ll " gls --color --group-directories-first -AlhFX"
 abbr -a ls " gls --color"
@@ -27,7 +28,7 @@ abbr -a z " z"
 abbr -a zi " zi"
 
 # set enviroment variables
-set -x LS_COLORS "$(vivid generate molokai)"
+set -x LS_COLORS (vivid generate molokai)
 set -x FZF_LEGACY_KEYBINDINGS 0
 set -x FZF_DEFAULT_OPTS "--bind 'backward-eof:abort,ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all' --reverse --height=75%"
 set -x FZF_DEFAULT_COMMAND 'rg -uu --files --hidden --glob "!.git"'
@@ -35,7 +36,7 @@ set -x FZF_DEFAULT_COMMAND 'rg -uu --files --hidden --glob "!.git"'
 # bind shortcut keys
 # bind \cq 'fzf_change_env'
 bind \cr 'fzf_command_history'
-bind \ct 'fzf_preview_dir'
+bind \ct 'fzf_select_file'
 bind \cy 'fcd'
 
 # auto load tmux session
