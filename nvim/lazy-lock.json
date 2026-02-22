@@ -40,5 +40,6 @@
   "vim-edgemotion": { "branch": "master", "commit": "8d16bd92f6203dfe44157d43be7880f34fd5c060" },
   "vim-matchup": { "branch": "master", "commit": "0fb1e6b7cea34e931a2af50b8ad565c5c4fd8f4d" },
   "vim-quickhl": { "branch": "master", "commit": "be1f44169c3fdee3beab629e83380515da03835e" },
-  "vim-repeat": { "branch": "master", "commit": "65846025c15494983dafe5e3b46c8f88ab2e9635" }
+  "vim-repeat": { "branch": "master", "commit": "65846025c15494983dafe5e3b46c8f88ab2e9635" },
+  "zoxide.vim": { "branch": "master", "commit": "520d1abeb71ba42989a842251f8ba5c46be89aab" }
 }
