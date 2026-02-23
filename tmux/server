@@ -1,0 +1,6 @@
+tmux rename-window server
+
+tmux split-window -h -l 50% -t 1
+tmux split-window -v -l 50% -t 1
+tmux split-window -v -l 50% -t 3
+tmux select-pane -t 1
