@@ -8,6 +8,7 @@ zoxide init fish | source
 abbr -a b " bat"
 abbr -a bn " bat --paging=never"
 abbr -a bd " bd"
+abbr -a btm " btm --disable_click --process_memory_as_value --enable_cache_memory "
 abbr -a c " cdh"
 abbr -a cd " cd"
 abbr -a cdd " cd ../"
