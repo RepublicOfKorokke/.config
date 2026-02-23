@@ -32,9 +32,9 @@ return {
 		--     pattern = { "*" },
 		--     command = "lua vim.notify('LspAttach to: ' .. vim.fn.expand('%'))",
 		-- })
-		vim.api.nvim_create_autocmd({ "LspDetach" }, {
-			pattern = { "*" },
-			command = "lua vim.notify('LspDetach from: ' .. vim.fn.expand('%'))",
-		})
+		-- vim.api.nvim_create_autocmd({ "LspDetach" }, {
+		-- 	pattern = { "*" },
+		-- 	command = "lua vim.notify('LspDetach from: ' .. vim.fn.expand('%'))",
+		-- })
 	end,
 }

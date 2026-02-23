@@ -6,7 +6,7 @@ return {
 		{ "delphinus/skkeleton_indicator.nvim", opts = {} },
 	},
 	config = function()
-		vim.keymap.set({ "i", "c", "t" }, "<C-l>", "<Plug>(skkeleton-toggle)", { desc = "toggle skkeleton" })
+		vim.keymap.set({ "i", "c" }, "<C-l>", "<Plug>(skkeleton-toggle)", { desc = "toggle skkeleton" })
 		local dicts = vim.fn.glob("~/skk/*", true, true)
 		vim.fn["skkeleton#config"]({
 			eggLikeNewline = true,
