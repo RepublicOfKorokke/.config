@@ -23,12 +23,15 @@ packages=(
     tmux
     neovim
     fzf
+    zoxide
     bat
     ripgrep
     fd
     viddy
     gron
     vivid
+    bottom
+    glow
 )
 
 for pkg in "${packages[@]}"; do
