@@ -14,6 +14,7 @@ abbr -a cd " cd"
 abbr -a cdd " cd ../"
 abbr -a d " dirh"
 abbr -a fdu " du -hs (find . -maxdepth 1 -type d | fzf)"
+abbr -a fcd " fcd"
 abbr -a fkill " ps | fzf | awk '{print \$1}' | xargs kill -9"
 abbr -a glow " glow"
 abbr -a gpwd " git rev-parse --show-prefix"
@@ -38,8 +39,7 @@ set -x FZF_DEFAULT_COMMAND 'rg -uu --files --hidden --glob "!.git"'
 # bind shortcut keys
 # bind \cq 'fzf_change_env'
 bind \cr 'fzf_command_history'
-bind \ct 'fzf_select_file'
-bind \cy 'fcd'
+bind \cq 'fzf_select_file'
 
 # auto load tmux session
 function attach_tmux_session_if_needed
