@@ -1,0 +1,34 @@
+{
+  "openai/Nemotron-Cascade-2-30B-A3B-oQ3e": {
+    "max_tokens": 262144,
+    "max_chat_history_tokens": 16384,
+    "input_cost_per_token": 0.000001,
+    "output_cost_per_token": 0.000002,
+    "litellm_provider": "openai",
+    "mode": "chat"
+  },
+  "openai/Qwen3.5-35B-A3B-oQ3e": {
+    "max_tokens": 262144,
+    "max_chat_history_tokens": 16384,
+    "input_cost_per_token": 0.000001,
+    "output_cost_per_token": 0.000002,
+    "litellm_provider": "openai",
+    "mode": "chat"
+  },
+  "openai/Qwen3.5-4B-oQ4": {
+    "max_tokens": 262144,
+    "max_chat_history_tokens": 16384,
+    "input_cost_per_token": 0.000001,
+    "output_cost_per_token": 0.000002,
+    "litellm_provider": "openai",
+    "mode": "chat"
+  },
+  "openai/Qwen3.5-0.8B": {
+    "max_tokens": 262144,
+    "max_chat_history_tokens": 16384,
+    "input_cost_per_token": 0.000001,
+    "output_cost_per_token": 0.000002,
+    "litellm_provider": "openai",
+    "mode": "chat"
+  }
+}
