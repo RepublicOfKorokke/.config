@@ -1,13 +1,12 @@
 return {
 	"https://codeberg.org/andyg/leap.nvim",
-	event = { "BufReadPre", "BufNewFile" },
 	keys = {
 		{ "s", "<Plug>(leap)", mode = { "n", "x", "o" }, desc = "Leap to next char" },
 		{ "S", "<Plug>(leap-anywhere)", mode = "n", desc = "Leap to next char anywhere" },
 	},
 	config = function()
 		vim.api.nvim_set_hl(0, "LeapBackdrop", { link = "Comment" })
-		require("leap.user").set_repeat_keys("<TAB>", "<S-Tab>")
+		require("leap.user").set_repeat_keys("<enter>", "<backspace>")
 		do
 			-- Return an argument table for `leap()`, tailored for f/t-motions.
 			local function as_ft(key_specific_args)
