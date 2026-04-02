@@ -24,6 +24,5 @@ return {
 	end,
 	dependencies = {
 		"HiPhish/rainbow-delimiters.nvim",
-		"andymass/vim-matchup",
 	},
 }
