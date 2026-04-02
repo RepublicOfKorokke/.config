@@ -23,6 +23,7 @@ return {
 			":FzfLua grep_cword<Return>",
 			{ noremap = true, desc = "Grep Cword" }
 		)
+		vim.api.nvim_set_keymap("n", "<Leader>fr", ":FzfLua resume<Return>", { noremap = true, desc = "Resume" })
 		vim.api.nvim_set_keymap("n", "<Leader>fl", ":FzfLua blines<Return>", { noremap = true, desc = "Buffer Lines" })
 		vim.api.nvim_set_keymap("n", "<Leader>fn", ":FzfLua files<Return>", { noremap = true, desc = "Files" })
 		vim.api.nvim_set_keymap("n", "<Leader>fN", ":FzfLua oldfiles<Return>", { noremap = true, desc = "Oldfiles" })
