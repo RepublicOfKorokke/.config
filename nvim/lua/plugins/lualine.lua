@@ -37,7 +37,7 @@ return {
 		},
 		tabline = { -- tab view
 			lualine_a = { "tabs" },
-			lualine_b = {},
+			lualine_b = { "windows" },
 			lualine_c = {},
 			lualine_x = { "diff", "diagnostics" },
 			lualine_y = { "branch" },
