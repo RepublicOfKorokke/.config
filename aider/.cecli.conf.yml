@@ -74,8 +74,8 @@ openai-api-base: http://localhost:51234/v1
 
 ## Add a model alias (can be used multiple times)
 alias:
-  - "Qwen3.5:openai/Qwen3.5-35B-A3B-oQ3e"
-  - "Qwen3.5-opus:openai/Darwin-35B-A3B-Opus-oQ3"
+  - "qwen3.5:openai/Qwen3.5-35B-A3B-oQ3e"
+  - "qwen3.5-opus:openai/Darwin-35B-A3B-Opus-oQ3"
   - "gemma:openai/gemma-4-26B-A4B-it-oQ3"
 
 ## Set the reasoning_effort API parameter (default: not set)
@@ -424,7 +424,7 @@ commit-prompt: "follow conventional commit message format. Use only plain Englis
 #fancy-input: true
 
 ## Enable/disable multi-line input mode with Meta-Enter to submit (default: False)
-# multiline: true
+multiline: true
 
 ## Enable/disable terminal bell notifications when LLM responses are ready (default: False)
 notifications: true
