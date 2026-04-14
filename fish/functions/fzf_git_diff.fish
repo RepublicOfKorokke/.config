@@ -36,8 +36,8 @@ function fzf_git_diff
     or return
 
     if test "$diff_command" = "git log -p"
-        commandline -r "git log -p $from_hash^..$to_hash"
+        commandline -r " git log -p $from_hash^..$to_hash"
     else
-        commandline -r "git diff $from_hash^ $to_hash"
+        commandline -r " git diff $from_hash^ $to_hash"
     end
 end
