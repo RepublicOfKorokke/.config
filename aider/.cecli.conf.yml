@@ -115,7 +115,7 @@ auto-accept-architect: false
 #check-model-accepts-settings: true
 
 ## Soft limit on tokens for chat history, after which summarization begins. If unspecified, defaults to the model's max_chat_history_tokens.
-#max-chat-history-tokens: xxx
+max-chat-history-tokens: 65536
 
 #################
 # Cache settings:
