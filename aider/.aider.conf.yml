@@ -92,7 +92,7 @@ alias:
 # timeout: "120"
 
 ## Specify what edit format the LLM should use (default depends on model)
-#edit-format: xxx
+edit-format: udiff
 
 ## Use architect edit format for the main chat
 # architect: true

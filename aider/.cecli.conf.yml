@@ -18,7 +18,7 @@
 # Main model:
 
 ## Specify the model to use for the main chat
-model: openai/Darwin-35B-A3B-Opus-oQ3
+model: openai/gemma-4-26B-A4B-it-oQ3
 
 ########################
 # API Keys and settings:
@@ -91,7 +91,7 @@ alias:
 # timeout: "120"
 
 ## Specify what edit format the LLM should use (default depends on model)
-#edit-format: xxx
+edit-format: udiff
 
 ## Use architect edit format for the main chat
 # architect: true
