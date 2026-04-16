@@ -102,3 +102,15 @@ autocmd("LspAttach", {
 		end)
 	end,
 })
+
+vim.api.nvim_create_user_command("ProfileStart", function()
+	vim.cmd("profile start profile.log")
+	vim.cmd("profile func *")
+	vim.cmd("profile file *")
+	print("🚀 Profiling started... (Output: profile.log)")
+end, {})
+
+vim.api.nvim_create_user_command("ProfileStop", function()
+	vim.cmd("profile pause")
+	print("⏸️ Profiling paused. Quit Neovim to finalize the log.")
+end, {})
