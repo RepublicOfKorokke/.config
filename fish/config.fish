@@ -32,6 +32,7 @@ abbr -a z " z"
 abbr -a zi " zi"
 
 # set enviroment variables
+set -x EDITOR "nvim"
 set -x LS_COLORS (vivid generate molokai)
 set -x FZF_LEGACY_KEYBINDINGS 0
 set -x FZF_DEFAULT_OPTS "--bind 'backward-eof:abort,ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all' --reverse --height=75%"
