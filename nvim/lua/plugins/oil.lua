@@ -8,11 +8,12 @@ return {
 		keymaps = {
 			["g?"] = "actions.show_help",
 			["<CR>"] = "actions.select",
+			["<C-l>"] = "actions.select",
 			["<C-t>"] = "actions.select_tab",
 			["<TAB>"] = "actions.preview",
 			["<C-c>"] = "actions.close",
 			["<C-r>"] = "actions.refresh",
-			["0"] = "actions.parent",
+			["<C-h>"] = "actions.parent",
 			["1"] = "actions.open_cwd",
 			["2"] = "actions.cd",
 			["3"] = "actions.tcd",
