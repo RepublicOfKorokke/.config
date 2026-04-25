@@ -1,0 +1,45 @@
+FROM ubuntu:24.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    procps \
+    curl \
+    file \
+    git \
+    locales \
+    sudo \
+    && rm -rf /var/lib/apt/lists/* \
+    && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+
+ENV LANG=en_US.UTF-8
+
+RUN useradd -m linuxbrew && \
+    echo "linuxbrew ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
+USER linuxbrew
+WORKDIR /home/linuxbrew
+
+# Install Homebrew
+RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Set Homebrew path
+ENV PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:${PATH}"
+
+RUN brew update && brew install \
+    neovim \
+    fzf \
+    zoxide \
+    bat \
+    ripgrep \
+    fd \
+    node \
+    && brew cleanup
+
+RUN echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
+
+# Copy nvim config files
+COPY --chown=linuxbrew:linuxbrew nvim /home/linuxbrew/.config/nvim
+
+CMD ["/bin/bash"]
