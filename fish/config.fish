@@ -79,7 +79,7 @@ function notify_long_command --on-event fish_postexec
     set -l title "$finish_time ("$duration"ms)"
 
     if type -q osascript
-        osascript -e "display notification \"$cmd_name\" with title \"$title\" sound name \"Pop\""
+        osascript -e "display notification \"$cmd_name\" with title \"$title\" sound name \"Glass\""
     else if type -q notify-send
         notify-send -u critical "$title" "$cmd_name"
     end
