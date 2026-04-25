@@ -3,6 +3,7 @@ function fish_greeting
 end
 
 zoxide init fish | source
+podman completion fish | source
 
 # set aliases
 abbr -a b " bat"
