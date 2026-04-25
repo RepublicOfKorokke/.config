@@ -1,0 +1,29 @@
+{
+  "providers": {
+    "omlx": {
+      "baseUrl": "http://host.docker.internal:51234/v1",
+      "api": "openai-completions",
+      "apiKey": "none",
+      "models": [
+        {
+          "id": "gemma-4-26B-A4B-it-oQ4-fp16",
+          "name": "Gemma4 26B-A4B (Local)",
+          "reasoning": true,
+          "input": ["text", "image"],
+          "contextWindow": 262144,
+          "maxTokens": 32000,
+          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
+        },
+        {
+          "id": "Qwen3.6-35B-A3B-MLX-oQ5-FP16",
+          "name": "Qwen3.6 35B-A3B (Local)",
+          "reasoning": true,
+          "input": ["text", "image"],
+          "contextWindow": 262144,
+          "maxTokens": 32000,
+          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
+        }
+      ]
+    }
+  }
+}
