@@ -2,7 +2,7 @@ local target_filetypes = { "text", "markdown", "json" }
 
 return {
 	{
-		"username/bionic-reading.nvim",
+		"FluxxField/bionic-reading.nvim",
 		ft = target_filetypes,
 
 		opts = function()
