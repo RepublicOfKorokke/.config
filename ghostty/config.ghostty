@@ -1,3 +1,7 @@
+keybind = clear
+keybind = super+c=copy_to_clipboard
+keybind = super+v=paste_from_clipboard
+
 font-size = 14
 
 background-opacity = 0.85
@@ -6,4 +10,3 @@ background-blur-radius = 50
 mouse-hide-while-typing = true
 
 custom-shader = shaders/cursor_warp.glsl
-
